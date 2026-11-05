@@ -41,8 +41,6 @@ guest@kav:~$ resume        open the CV
 
 **Some commands are hidden.** Around seventy of them, aimed at people who like to probe a shell. Try the things you'd try on a box you don't own. None of them touch anything real; it's a static site. If you give up, `ls -a` has a hint.
 
-<img alt="The amber theme listing the hidden-command cheat sheet" src="docs/terminal-amber.png" width="100%">
-
 ### The desktop
 
 <img alt="Win95 desktop with Outlook Express showing a go-live report, and Minesweeper" src="docs/desktop.png" width="100%">
@@ -58,8 +56,6 @@ guest@kav:~$ resume        open the CV
 | **Recycle Bin** | Old files with something to say. It refuses to be emptied. |
 
 ### The CV
-
-<img alt="The LaTeX-style CV in Computer Modern on a desk-grey background" src="docs/cv.png" width="100%">
 
 It follows Jake's résumé layout. The fonts are CMU Serif, cut down to the Latin characters (about 37 KB per weight) and served from the site itself. `@page` rules print exactly the CV on A4, with italic correction so slanted letters aren't clipped at the margin.
 
