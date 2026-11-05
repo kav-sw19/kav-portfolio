@@ -11,7 +11,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
 ![Vite](https://img.shields.io/badge/Vite-8-646cff)
 
-<a href="docs/demo.mp4"><img alt="Booting KavOS: BIOS, GRUB, terminal commands (whoami, stats, sudo hire-me, cowsay), then gui opens a Win95 desktop with Outlook Express, Minesweeper and the Recycle Bin, and the Start menu leads to the LaTeX-style CV" src="docs/demo.gif" width="100%"></a>
+<a href="docs/demo.mp4"><img alt="Booting KavOS: BIOS, GRUB, terminal commands (whoami, neofetch, cowsay), then gui opens a Win95 desktop: Outlook Express shows the go-live report, a game of Minesweeper, the Recycle Bin from the Start menu, and the Start menu leads to the LaTeX-style CV" src="docs/demo.gif" width="100%"></a>
 
 **[→ Open it](https://kav-portfolio-chi.vercel.app)** · [Watch the MP4](docs/demo.mp4) · [Read the CV](https://kav-portfolio-chi.vercel.app/#plain)
 
