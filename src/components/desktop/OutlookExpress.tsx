@@ -28,6 +28,7 @@ Nothing is sent from this page.`,
   Case moves ............ 14,080
   Failed sends .......... 0
   Read-back check ....... 400/400 matched
+  Schedule .............. hourly (cron), still running
 
 Coffee consumed: unknown (counter overflowed).`,
   },

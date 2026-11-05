@@ -219,7 +219,7 @@ Contact:     ${profile.email}`}</Pre>
     ),
   },
   finger: { desc: 'finger', hidden: true, run: () => `Login: kav    Name: ${profile.name}\nPlan: build useful things, measure them, repeat.` },
-  crontab: { desc: 'crontab', hidden: true, run: () => <Pre>{'0 7 * * *    make-coffee\n0 9 * * 1-5  ship-something\n0 17 * * 5   write-tests-for-the-thing-shipped-on-monday\n0 23 * * *   go-to-bed   # has never run successfully'}</Pre> },
+  crontab: { desc: 'crontab', hidden: true, run: () => <Pre>{'@hourly      medallion       # ingest, classify and extract new mail\n@hourly      case-updates    # apply new responses to the CRM\n0 7 * * *    make-coffee\n0 9 * * 1-5  ship-something\n0 17 * * 5   write-tests-for-the-thing-shipped-on-monday\n0 23 * * *   go-to-bed   # has never run successfully'}</Pre> },
   systemctl: {
     desc: 'systemctl',
     hidden: true,
@@ -250,7 +250,10 @@ Contact:     ${profile.email}`}</Pre>
           return <Pre>{"On branch main\nYour career is ahead of 'origin/expectations' by 3 commits.\n\nnothing to commit, working tree clean (unlike my desk)"}</Pre>
         case 'log':
           return (
-            <Pre>{`commit 16409c1 (HEAD -> main)
+            <Pre>{`commit 0c40ec1 (HEAD -> main)
+    feat: medallion + case updates now run hourly on cron
+
+commit 16409c1
     feat: automated 14,080 case moves at go-live
 
 commit 54k0e11

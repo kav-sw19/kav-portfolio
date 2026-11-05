@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { certifications, education, experience, fortunes, personalStats, profile, projects, skills } from '../data/profile'
+import { certifications, education, experience, fortunes, profile, projects, skills } from '../data/profile'
 import Rich from '../components/Rich'
 import { THEMES, type ThemeName } from '../theme'
 import { eggs } from './eggs'
@@ -140,7 +140,7 @@ export const commands: Record<string, Command> = {
         <div className="t-accent">{profile.title}</div>
         <p>{profile.tagline}</p>
         <p className="t-dim">
-          more: <Cmd c="about" /> · <Cmd c="experience" /> · <Cmd c="stats" /> · <Cmd c="projects" /> · <Cmd c="contact" />
+          more: <Cmd c="about" /> · <Cmd c="experience" /> · <Cmd c="projects" /> · <Cmd c="contact" />
         </p>
       </div>
     ),
@@ -152,22 +152,6 @@ export const commands: Record<string, Command> = {
         {profile.bio.map((b, i) => (
           <p key={i}>{b}</p>
         ))}
-      </div>
-    ),
-  },
-  stats: {
-    desc: 'a few facts about me',
-    run: () => (
-      <div className="t-block">
-        {personalStats.map((h) => (
-          <div key={h.label} className="t-row">
-            <span className="t-accent t-head t-num">{h.value}</span>
-            <span>{h.label}</span>
-          </div>
-        ))}
-        <p className="t-dim">
-          more about me: <Cmd c="about" /> · <Cmd c="experience" />
-        </p>
       </div>
     ),
   },
@@ -456,7 +440,7 @@ export const commands: Record<string, Command> = {
 }
 
 // aliases
-const alias: Record<string, string> = { work: 'experience', jobs: 'experience', cv: 'resume', ll: 'ls', dir: 'ls', cls: 'clear', '?': 'help', email: 'contact', bio: 'about', stat: 'stats' }
+const alias: Record<string, string> = { work: 'experience', jobs: 'experience', cv: 'resume', ll: 'ls', dir: 'ls', cls: 'clear', '?': 'help', email: 'contact', bio: 'about' }
 for (const [a, target] of Object.entries(alias)) commands[a] = { ...commands[target], hidden: true }
 
 // Hidden commands for the curious. Always hidden from help and tab completion.
@@ -479,7 +463,8 @@ SYNOPSIS
 
 DESCRIPTION
      Turns messy inboxes and manual processes into data pipelines and
-     LLM automation, then measures whether it worked.
+     LLM automation that keep running hourly on cron, then measures
+     whether it worked.
 
 OPTIONS
      --coffee     required

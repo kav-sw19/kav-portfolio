@@ -32,7 +32,6 @@ All three render from one file, [`src/data/profile.ts`](src/data/profile.ts). Ch
 ```text
 guest@kav:~$ help          what you can do
 guest@kav:~$ whoami        who this is
-guest@kav:~$ stats         the headline numbers
 guest@kav:~$ experience    work history
 guest@kav:~$ theme amber   green, amber, white, dracula, cyan
 guest@kav:~$ gui           launch the desktop

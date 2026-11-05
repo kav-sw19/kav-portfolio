@@ -40,13 +40,13 @@ export const profile = {
   tagline: 'I build AI systems that move real work: data pipelines, LLM automation and developer tools.',
   location: 'Shropshire, UK',
   bio: [
-    'AI Solutions Engineer at Tanantech, where I turn messy inboxes and manual case-handling into data pipelines and LLM automation that run every day.',
+    'AI Solutions Engineer at Tanantech, where I turn messy inboxes and manual case-handling into data pipelines and LLM automation that now run unattended, every hour, as cron jobs.',
     'First Class Computer Science graduate from the University of Leicester. Before Tanantech I trained and evaluated large language models at Outlier, which is where I learned how they fail and how to test for it.',
     'Outside work I build developer tools, mostly in Rust and TypeScript, for the coding agents I use all day.',
   ],
   /** CV-style summary. **double asterisks** mark bold phrases (rendered bold on the CV, accent in the terminal). */
   summary:
-    'AI Solutions Engineer with a First Class Computer Science degree, building **LLM automation, data pipelines and agentic tooling** that run in production. Designed a **medallion email and document lakehouse** that classifies and extracts tens of thousands of emails with **System One models** (structured decisions with probability scores, not free text), and the automation that turned those extractions into **16,409 records updated and 14,080 automated case moves** at go-live, verified against the live CRM. Background in **LLM evaluation and prompt engineering** from training models at Outlier, and a habit of measuring before claiming. Builds developer tools in **Rust and TypeScript** in spare time.',
+    'AI Solutions Engineer with a First Class Computer Science degree, building **LLM automation, data pipelines and agentic tooling** that run in production. Designed a **medallion email and document lakehouse** that classifies and extracts tens of thousands of emails with **System One models** (structured decisions with probability scores, not free text), and the automation that turned those extractions into **16,409 records updated and 14,080 automated case moves** at go-live, verified against the live CRM. Both still run in production as **hourly cron jobs**. Background in **LLM evaluation and prompt engineering** from training models at Outlier, and a habit of measuring before claiming. Builds developer tools in **Rust and TypeScript** in spare time.',
   website: 'https://kav-portfolio-chi.vercel.app',
   repo: 'https://github.com/kav-sw19/kav-portfolio',
   email: 'kav.sw19@gmail.com',
@@ -56,13 +56,6 @@ export const profile = {
   ] as Link[],
   resume: null as string | null, // e.g. '/kavindu-walisinghe-cv.pdf' once added to /public
 }
-
-/** Facts about Kav, shown by `stats` in the terminal. */
-export const personalStats: { value: string; label: string }[] = [
-  { value: '1st', label: 'BSc Computer Science, First Class Honours, University of Leicester' },
-  { value: '4 yrs', label: 'writing code' },
-  { value: '3', label: 'spoken languages: English, Italian, Sinhala' },
-]
 
 /** Headline work numbers, shown on the plain page and in the desktop's Outlook Express. */
 export const highlights: { value: string; label: string }[] = [
@@ -88,6 +81,7 @@ export const experience: Job[] = [
           'Designed and built a **bronze → silver → gold medallion lakehouse** (Delta Lake on S3, Postgres serving layer) that ingests whole mailboxes via the Microsoft Graph API, cleans and de-duplicates emails and attachments, and turns them into CRM-ready data.',
           'Classification and extraction run on **System One models**: decision models that return structured labels, fields and **probability scores** instead of free-form text, so every output is machine-checkable. Model and prompt versions are pinned, token budgets are counted up front, and requests are HMAC-signed async jobs with retries.',
           'Processed **nearly 54,000 business emails** from a single mailbox end to end: all classified, 41,500+ extracted into 48,000+ structured rows, with every raw model response kept immutably as an audit trail (146k+).',
+          'Still in production, running as an **hourly cron job**: new mail is processed with no manual runs.',
           '**18× the throughput** of the MongoDB pipeline it replaced: 48k extractions in under 8 hours at 200-way concurrency, with call failures cut from **24% to 0.05%**.',
           'Roughly **$0.001 per email** for classification and extraction together. Content-hash de-duplication cut stored attachments by 70%.',
           'Validation built in: schema, plausibility and format checks on every row, and append-only result history so any answer can be traced and replayed. QC found 0.22% incorrect values across 41.5k rows.',
@@ -99,6 +93,7 @@ export const experience: Job[] = [
         points: [
           "Turned Medallion's extracted email responses into live CRM updates: each response is matched to its record (exact, then scored fuzzy matching), ranked against competing responses, then applied as field updates followed by a state change.",
           'Go-live run: **16,409 records updated** from 18,390 responses, with **103,943 field values** written and **14,080 cases moved state** automatically. This was work previously done by hand.',
+          'Still in production, running as an **hourly cron job** that applies new responses as they arrive.',
           'The main batch of 15,309 records ran in about 5 hours with **0 failed sends**. The 2,329 moves the CRM refused by rule were routed to a ready-made review list.',
           'Verified, not trusted: a random sample of **400 records read back from the live CRM matched** on every field and state. An independent re-implementation agreed on 18,388 of 18,390 decisions, and 1,000+ automated tests passed.',
           'Rolled out in stages (a 100-record pilot, a 1,000-record batch, then the full run) on a declarative **state-machine engine** with dry-run mode, an idempotent send ledger, retries and read-back verification.',
