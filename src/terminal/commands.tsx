@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { certifications, education, experience, fortunes, highlights, profile, projects, skills } from '../data/profile'
+import { certifications, education, experience, fortunes, personalStats, profile, projects, skills } from '../data/profile'
 import Rich from '../components/Rich'
 import { THEMES, type ThemeName } from '../theme'
 import { eggs } from './eggs'
@@ -156,17 +156,17 @@ export const commands: Record<string, Command> = {
     ),
   },
   stats: {
-    desc: 'the headline numbers',
+    desc: 'a few facts about me',
     run: () => (
       <div className="t-block">
-        {highlights.map((h) => (
+        {personalStats.map((h) => (
           <div key={h.label} className="t-row">
             <span className="t-accent t-head t-num">{h.value}</span>
             <span>{h.label}</span>
           </div>
         ))}
         <p className="t-dim">
-          the story behind them: <Cmd c="experience tanantech" />
+          more about me: <Cmd c="about" /> · <Cmd c="experience" />
         </p>
       </div>
     ),

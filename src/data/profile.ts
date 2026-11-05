@@ -57,7 +57,14 @@ export const profile = {
   resume: null as string | null, // e.g. '/kavindu-walisinghe-cv.pdf' once added to /public
 }
 
-/** Headline numbers, shown on the plain page and by `stats` in the terminal. */
+/** Facts about Kav, shown by `stats` in the terminal. */
+export const personalStats: { value: string; label: string }[] = [
+  { value: '1st', label: 'BSc Computer Science, First Class Honours, University of Leicester' },
+  { value: '4 yrs', label: 'writing code' },
+  { value: '3', label: 'spoken languages: English, Italian, Sinhala' },
+]
+
+/** Headline work numbers, shown on the plain page and in the desktop's Outlook Express. */
 export const highlights: { value: string; label: string }[] = [
   { value: '16,409', label: 'records updated automatically at go-live' },
   { value: '54k', label: 'emails classified and extracted by LLM pipeline' },
