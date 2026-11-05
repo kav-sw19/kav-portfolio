@@ -135,35 +135,6 @@ export const experience: Job[] = [
     ],
     tech: ['Prompt engineering', 'LLM evaluation', 'Python'],
   },
-  {
-    slug: 'haughton-hall',
-    company: 'Haughton Hall Hotel',
-    role: 'Guest Services Assistant (Reception & Systems)',
-    location: 'Shifnal',
-    start: 'Jun 2025',
-    end: 'Jun 2026',
-    highlights: [
-      {
-        points: [
-          'Managed bookings, payments and guest data across multiple reservation platforms and internal systems.',
-          'Kept data consistent across departments in real time during events of up to 300 guests.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'buckatree-hall',
-    company: 'Buckatree Hall Hotel',
-    role: 'Bartender',
-    location: 'Telford',
-    start: 'Jun 2024',
-    end: 'Sep 2024',
-    highlights: [
-      {
-        points: ['Delivered customer service in a fast-paced environment while managing multiple priorities, strengthening communication and teamwork.'],
-      },
-    ],
-  },
 ]
 
 export const projects: Project[] = [
