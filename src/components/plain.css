@@ -1,0 +1,129 @@
+/* Plain mode: the CV, set like the LaTeX original (Jake's résumé layout in Computer Modern).
+   Fonts are latin-subset copies of CMU Serif (SIL OFL, see assets/fonts/OFL.txt). */
+
+@font-face { font-family: 'CMU Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/cmu-serif-500-roman.woff2') format('woff2'); }
+@font-face { font-family: 'CMU Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url('../assets/fonts/cmu-serif-500-italic.woff2') format('woff2'); }
+@font-face { font-family: 'CMU Serif'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/cmu-serif-700-roman.woff2') format('woff2'); }
+@font-face { font-family: 'CMU Serif'; font-style: italic; font-weight: 700; font-display: swap; src: url('../assets/fonts/cmu-serif-700-italic.woff2') format('woff2'); }
+
+html.is-doc, html.is-doc body { background: #e8e6e1; }
+
+.cv-desk {
+  --ink: #000;
+  --paper: #fff;
+  --desk: #e8e6e1;
+  min-height: 100%;
+  background: var(--desk);
+  color: var(--ink);
+  color-scheme: light;
+  padding: 0 max(16px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+
+/* ---- toolbar (screen only) ---- */
+.cv-bar {
+  max-width: 8.5in; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: max(12px, env(safe-area-inset-top)) 2px 12px;
+  font: 500 0.8125rem/1 var(--mono);
+}
+.cv-bar-modes { display: flex; gap: 18px; }
+.cv-bar a, .cv-foot a { color: #1f4d2e; text-decoration: underline; text-decoration-color: rgb(31 77 46 / 0.35); text-underline-offset: 3px; }
+.cv-bar-print {
+  font: inherit; color: #fff; background: #1b1b1b; border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer;
+  transition: transform 160ms var(--ease-out);
+}
+.cv-bar-print:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .cv-bar a:hover, .cv-foot a:hover { text-decoration-color: currentColor; }
+  .cv-bar-print:hover { background: #333; }
+}
+.cv-desk :focus-visible { outline: 2px solid #1f4d2e; outline-offset: 2px; }
+
+/* ---- the sheet ---- */
+.cv {
+  max-width: 8.5in; margin: 4px auto 0;
+  background: var(--paper);
+  padding: 0.5in 0.55in 0.6in;
+  font-family: 'CMU Serif', 'Latin Modern Roman', 'Computer Modern Serif', Georgia, 'Times New Roman', serif;
+  font-size: 15px; line-height: 1.28;
+  font-kerning: normal; font-variant-ligatures: common-ligatures;
+  /* a sheet resting on the desk: soft, layered, no hard border */
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.04), 0 1px 2px rgb(0 0 0 / 0.06), 0 8px 24px rgb(0 0 0 / 0.08);
+  -webkit-hyphens: manual; hyphens: manual;
+}
+.cv a { color: inherit; text-decoration: underline; text-decoration-thickness: 0.5px; text-underline-offset: 2px; }
+.cv b, .cv strong { font-weight: 700; }
+
+.cv-head { text-align: center; margin-bottom: 4px; }
+.cv-name {
+  font-size: 2.15em; font-weight: 400; line-height: 1.1; margin: 0 0 6px;
+  font-variant-caps: small-caps; letter-spacing: 0.01em;
+}
+.cv-name:focus { outline: none; }
+.cv-contact {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 18px;
+  font-size: 0.93em;
+}
+.cv-contact li { display: inline-flex; align-items: center; gap: 6px; }
+.cv-contact a { display: inline-block; padding: 3px 0; } /* 24px-tall hit area (WCAG 2.5.8) without changing the look */
+.cv-contact svg { flex-shrink: 0; transform: translateY(-0.02em); }
+
+.cv-section { margin-top: 14px; }
+.cv-section h2 {
+  font-size: 1.3em; font-weight: 700; line-height: 1.2; margin: 0 0 6px;
+  padding-bottom: 2px; border-bottom: 0.75px solid var(--ink);
+}
+.cv-summary { margin: 0; }
+
+.cv-entry { margin: 0 0 9px; }
+.cv-entry:last-child { margin-bottom: 0; }
+.cv-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 16px; }
+.cv-row-r { margin-left: auto; text-align: right; }
+.cv-sub { font-size: 0.95em; }
+.cv-sub .cv-row-r, .cv-sub .cv-row-l { padding-right: 0.12em; } /* italic correction: slanted last letters overhang the box */
+.cv-tech { font-weight: 700; }
+.cv-extra-link { font-weight: 400; font-style: italic; font-size: 0.92em; }
+
+.cv-group { margin-top: 3px; }
+.cv-group-title { margin: 6px 0 0 0.5em; font-weight: 700; font-style: italic; font-size: 0.95em; }
+.cv-bullets { margin: 3px 0 0; padding-left: 1.75em; font-size: 0.93em; }
+.cv-bullets li { margin: 0 0 3px; padding-left: 0.15em; }
+.cv-bullets li::marker { content: '•  '; font-size: 0.9em; }
+
+.cv-skills { margin: 0; padding-left: 1.2em; font-size: 0.97em; }
+.cv-skills div { margin: 0 0 3px; }
+.cv-skills dt { display: inline; font-weight: 700; }
+.cv-skills dt::after { content: ': '; font-weight: 400; }
+.cv-skills dd { display: inline; margin: 0; }
+
+.cv-foot { max-width: 8.5in; margin: 18px auto 0; text-align: center; font: 0.8125rem/1.4 var(--mono); color: #555; }
+
+/* ---- phones: the page becomes the screen ---- */
+@media (max-width: 720px) {
+  .cv-desk { padding-left: 0; padding-right: 0; }
+  .cv-bar { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .cv { padding: 22px max(18px, env(safe-area-inset-right)) 28px max(18px, env(safe-area-inset-left)); box-shadow: none; font-size: 15.5px; }
+  .cv-name { font-size: 1.9em; }
+  .cv-contact { gap: 2px 14px; }
+  .cv-bullets { padding-left: 1.3em; }
+  .cv-skills { padding-left: 0; }
+  .cv-foot { padding: 0 16px; }
+}
+
+/* ---- print: exactly the CV ---- */
+@media print {
+  @page { size: A4; margin: 11mm 12mm; }
+  html.is-doc, html.is-doc body, .cv-desk { background: #fff !important; }
+  .cv-bar, .cv-foot { display: none !important; }
+  .cv-desk { padding: 0; }
+  .cv { max-width: none; margin: 0; padding: 0; box-shadow: none; font-size: 10pt; line-height: 1.23; }
+  .cv-cert .cv-bullets { display: none; } /* on paper: title, issuer and date are enough */
+  .cv-cert { margin-bottom: 4px; }
+  .cv-section { margin-top: 11px; }
+  .cv-entry { margin-bottom: 7px; }
+  .cv-bullets li { margin-bottom: 1.5px; }
+  .cv a { text-decoration-thickness: 0.4pt; }
+  .cv-row, .cv-group-title, .cv-section h2 { break-after: avoid; }
+  .cv-bullets li, .cv-skills div { break-inside: avoid; }
+}

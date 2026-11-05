@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="KavOS: a portfolio that boots like an old PC">
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="60%" stop-color="#061006" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+    </radialGradient>
+    <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#000" opacity="0.28"/>
+    </pattern>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="#061006"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" filter="url(#glow)">
+    <text x="64" y="70" font-size="20" fill="#5c9a5c">KavBIOS (C) 2003-2026 · Memory Test: 65536K OK · Booting kavindu-walisinghe.portfolio …</text>
+    <text x="64" y="178" font-size="104" font-weight="700" fill="#4dff4d" letter-spacing="2">KavOS</text>
+    <text x="440" y="150" font-size="26" fill="#9ef09e">a portfolio that boots like an old PC</text>
+    <text x="440" y="186" font-size="22" fill="#5c9a5c">terminal · Win95 desktop · LaTeX-style CV</text>
+    <text x="64" y="246" font-size="24" fill="#4dff4d">guest@kav<tspan fill="#5c9a5c">:</tspan>~<tspan fill="#5c9a5c">$</tspan> <tspan fill="#9ef09e">sudo hire-me</tspan><tspan fill="#4dff4d"> ▍</tspan></text>
+  </g>
+  <rect width="1200" height="300" rx="18" fill="url(#scan)"/>
+  <rect width="1200" height="300" rx="18" fill="url(#vignette)"/>
+</svg>
