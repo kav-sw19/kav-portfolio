@@ -6,7 +6,7 @@
 
 [![Live site](https://img.shields.io/badge/live-kav--portfolio--chi.vercel.app-4dff4d?labelColor=061006)](https://kav-portfolio-chi.vercel.app)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-100%20%C2%B7%20100%20%C2%B7%20100-4dff4d?labelColor=061006)](#built-to-a-bar)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Licence: all rights reserved](https://img.shields.io/badge/licence-all%20rights%20reserved-lightgrey)](LICENSE)
 ![React](https://img.shields.io/badge/React-19-61dafb)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
 ![Vite](https://img.shields.io/badge/Vite-8-646cff)
@@ -149,4 +149,4 @@ Fork it and edit `src/data/profile.ts`: your bio, jobs, projects, skills and cer
 
 ## Licence
 
-The code is [MIT](LICENSE). The personal content (the CV text and figures in `profile.ts`, and the screenshots in `docs/`) is not covered by the MIT licence. The fonts are under the [SIL Open Font Licence](src/assets/fonts/OFL.txt).
+© 2026 Kavindu Walisinghe. [All rights reserved](LICENSE): the source is here to read, but the code, design and content may not be copied or reused without permission. The fonts are under the [SIL Open Font Licence](src/assets/fonts/OFL.txt) and Bootstrap Icons under MIT.
