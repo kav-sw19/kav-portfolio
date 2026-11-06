@@ -156,17 +156,6 @@ export const projects: Project[] = [
     install: 'brew install kav-sw19/tap/whosup',
   },
   {
-    slug: 'revline',
-    name: 'Revline Systems',
-    tagline: 'websites and automation for UK businesses.',
-    description: [
-      'Designed and built the website for **Revline Systems**, a UK web design and automation studio: scroll-driven storytelling, a pinned work gallery, live automation demos, a free-mockup request form and call booking.',
-      'Accessible and search-ready: keyboard and reduced-motion support throughout, structured data and an llms.txt so search engines and AI assistants describe the business accurately.',
-    ],
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'Motion', 'Vercel'],
-    links: [{ label: 'revlinesystems.co.uk', href: 'https://www.revlinesystems.co.uk' }],
-  },
-  {
     slug: 'kavos',
     name: 'KavOS (this portfolio)',
     tagline: 'a portfolio that boots like an old PC.',
