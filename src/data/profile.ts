@@ -37,16 +37,16 @@ export const profile = {
   name: 'Kavindu Walisinghe',
   handle: 'kav',
   title: 'AI Solutions Engineer',
-  tagline: 'I build AI systems that move real work: data pipelines, LLM automation and developer tools.',
+  tagline: 'I build software that solves real problems: backend systems, data pipelines, web apps, automation and AI.',
   location: 'Shropshire, UK',
   bio: [
-    'AI Solutions Engineer at Tanantech, where I turn messy inboxes and manual case-handling into data pipelines and LLM automation that now run unattended, every hour, as cron jobs.',
+    'AI Solutions Engineer at Tanantech, where I design and build the software behind a high-volume operations team: data platforms, CRM integrations, rules engines, automation and internal tools, much of it now running unattended every hour.',
     'First Class Computer Science graduate from the University of Leicester. Before Tanantech I trained and evaluated large language models at Outlier, which is where I learned how they fail and how to test for it.',
     'Outside work I build developer tools, mostly in Rust and TypeScript, for the coding agents I use all day.',
   ],
   /** CV-style summary. **double asterisks** mark bold phrases (rendered bold on the CV, accent in the terminal). */
   summary:
-    'AI Solutions Engineer with a First Class Computer Science degree, building **LLM automation, data pipelines and agentic tooling** that run in production. Designed a **medallion email and document lakehouse** that classifies and extracts tens of thousands of emails with **System One models** (structured decisions with probability scores, not free text), and the automation that turned those extractions into **16,409 records updated and 14,080 automated case moves** at go-live, verified against the live CRM. Both still run in production as **hourly cron jobs**. Background in **LLM evaluation and prompt engineering** from training models at Outlier, and a habit of measuring before claiming. Builds developer tools in **Rust and TypeScript** in spare time.',
+    'Software engineer and **First Class Computer Science graduate from the University of Leicester**, building technical solutions end to end: **backend services, data pipelines, web applications, integrations and automation**. At Tanantech I design and ship production systems that replace manual work and run unattended, from a data platform and CRM integrations to rules engines and internal tools. Works across the stack in **Python, TypeScript and Rust**, on **AWS and Cloudflare**, with a habit of testing and measuring before claiming. **AI is one strength among several**, with hands-on LLM integration and evaluation experience from Tanantech and from training models at Outlier. Builds developer tools in spare time.',
   website: 'https://kav-portfolio-chi.vercel.app',
   repo: 'https://github.com/kav-sw19/kav-portfolio',
   email: 'kav.sw19@gmail.com',
@@ -172,11 +172,12 @@ export const projects: Project[] = [
 ]
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: 'AI & LLMs', items: ['System One decision models', 'LLM automation', 'Structured extraction', 'Vision OCR', 'MCP servers', 'Agents & tool use', 'LLM evaluation', 'Prompt engineering', 'RAG'] },
-  { group: 'Languages', items: ['Python', 'TypeScript', 'Rust', 'SQL', 'Java', 'JavaScript'] },
-  { group: 'Data', items: ['Medallion / lakehouse architecture', 'Delta Lake', 'Apache Iceberg', 'ETL pipelines', 'PostgreSQL', 'Redis', 'Data validation'] },
-  { group: 'Web & APIs', items: ['React', 'Next.js', 'Flask', 'REST APIs', 'Gradio'] },
-  { group: 'Cloud & tools', items: ['AWS (S3, RDS)', 'Cloudflare (Workers, Durable Objects, R2)', 'Vercel', 'Azure / Microsoft Graph', 'Docker', 'GitLab CI', 'Git', 'Linux'] },
+  { group: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Rust', 'SQL', 'Java'] },
+  { group: 'Web & backend', items: ['React', 'Next.js', 'Flask', 'REST APIs', 'Third-party API integrations', 'Microsoft Graph API'] },
+  { group: 'Data', items: ['PostgreSQL', 'Redis', 'ETL pipelines', 'Lakehouse architecture (Delta Lake, Apache Iceberg)', 'Data validation'] },
+  { group: 'Cloud & DevOps', items: ['AWS (S3, RDS)', 'Cloudflare (Workers, Durable Objects, R2)', 'Azure', 'Vercel', 'Docker', 'GitLab CI', 'Git', 'Linux'] },
+  { group: 'Engineering practice', items: ['System design', 'Automated testing', 'Process automation', 'Rules engines & state machines', 'Technical documentation'] },
+  { group: 'AI', items: ['LLM integration', 'Structured extraction', 'Vision OCR', 'Agents & tool use (MCP)', 'LLM evaluation', 'Prompt engineering', 'RAG'] },
 ]
 
 export const education: Education[] = [
