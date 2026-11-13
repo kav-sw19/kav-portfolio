@@ -11,6 +11,8 @@ export type Project = {
   tech: string[]
   links: Link[]
   install?: string
+  /** Shorter bullets for the CV page (which must print on two A4 pages); the terminal and desktop use `description`. */
+  cv?: string[]
 }
 
 export type Job = {
@@ -42,7 +44,7 @@ export const profile = {
   bio: [
     'AI Solutions Engineer at Tanantech, where I design and build the software behind a high-volume operations team: data platforms, CRM integrations, rules engines, automation and internal tools, much of it now running unattended every hour.',
     'First Class Computer Science graduate from the University of Leicester. Before Tanantech I trained and evaluated large language models at Outlier, which is where I learned how they fail and how to test for it.',
-    'Outside work I build developer tools, mostly in Rust and TypeScript, for the coding agents I use all day.',
+    'Outside work I build developer tools and applications to solve real-world problems.',
   ],
   /** CV-style summary. **double asterisks** mark bold phrases (rendered bold on the CV, accent in the terminal). */
   summary:
@@ -139,6 +141,23 @@ export const experience: Job[] = [
 
 export const projects: Project[] = [
   {
+    slug: 'tipsytrail',
+    name: 'Tipsy Trail',
+    tagline: 'walking pub crawls, planned and mapped, anywhere in the UK.',
+    description: [
+      'A live web app that plans a walking pub crawl from any UK pub, town or location across **45,000 pubs**: pick how many pubs and how far to walk, and it builds the route pub by pub, with **turn-by-turn walking directions**, a crawl mode for the night and shareable links. Free, no account.',
+      'Trails come from a **deterministic graph search** over a real walking-distance matrix, scored on venue quality, leg fit and not doubling back, then checked against the real route. Routing runs on a **self-hosted OSRM** server rebuilt weekly from the UK OpenStreetMap extract.',
+      'A weekly **data pipeline** merges OpenStreetMap, Food Standards Agency ratings and Wikidata/Wikipedia into SQLite: hygiene ratings for **26,900 pubs** and photos for **7,900**, matched by ID or postcode and name, with a distance check so a chain is never mistaken for one of its pubs.',
+      'Runs at **zero hosting cost** on one Oracle Cloud Always Free server behind a Cloudflare Tunnel, provisioned with **Terraform**. Deploys build on the server and **roll back automatically** if a health check fails. 220+ unit and 37 end-to-end tests.',
+    ],
+    cv: [
+      'Live web app that plans walking pub crawls across **45,000 UK pubs**, with **turn-by-turn walking directions**, a crawl mode and shareable links. Trails come from a deterministic graph search over real walking distances from a **self-hosted OSRM** router; a weekly pipeline merges OpenStreetMap, Food Standards Agency and Wikidata data into SQLite.',
+      'Runs at **zero hosting cost** on an Oracle Cloud Always Free server behind a Cloudflare Tunnel, provisioned with **Terraform**; deploys **roll back automatically** on a failed health check. 220+ unit and 37 end-to-end tests.',
+    ],
+    tech: ['Next.js', 'TypeScript', 'OSRM', 'SQLite', 'Terraform', 'Cloudflare'],
+    links: [{ label: 'Live', href: 'https://tipsytrail.co.uk' }],
+  },
+  {
     slug: 'whosup',
     name: 'whosup',
     tagline: '`top` for your coding agents.',
@@ -174,8 +193,8 @@ export const projects: Project[] = [
 export const skills: { group: string; items: string[] }[] = [
   { group: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Rust', 'SQL', 'Java'] },
   { group: 'Web & backend', items: ['React', 'Next.js', 'Flask', 'REST APIs', 'Third-party API integrations', 'Microsoft Graph API'] },
-  { group: 'Data', items: ['PostgreSQL', 'Redis', 'ETL pipelines', 'Lakehouse architecture (Delta Lake, Apache Iceberg)', 'Data validation'] },
-  { group: 'Cloud & DevOps', items: ['AWS (S3, RDS)', 'Cloudflare (Workers, Durable Objects, R2)', 'Azure', 'Vercel', 'Docker', 'GitLab CI', 'Git', 'Linux'] },
+  { group: 'Data', items: ['PostgreSQL', 'SQLite', 'Redis', 'ETL pipelines', 'Lakehouse architecture (Delta Lake, Apache Iceberg)', 'Data validation'] },
+  { group: 'Cloud & DevOps', items: ['AWS (S3, RDS)', 'Cloudflare (Workers, Durable Objects, R2)', 'Azure', 'Oracle Cloud', 'Vercel', 'Docker', 'Terraform', 'GitLab CI', 'Git', 'Linux'] },
   { group: 'Engineering practice', items: ['System design', 'Automated testing', 'Process automation', 'Rules engines & state machines', 'Technical documentation'] },
   { group: 'AI', items: ['LLM integration', 'Structured extraction', 'Vision OCR', 'Agents & tool use (MCP)', 'LLM evaluation', 'Prompt engineering', 'RAG'] },
 ]
@@ -222,4 +241,5 @@ export const fortunes = [
   'The best prompt is the one you tested.',
   'Rust compiler says no. Rust compiler is usually right.',
   'Somewhere, a coding agent is waiting for your approval. Run whosup to find it.',
+  'The shortest path between two pubs is rarely a straight line. Ask Tipsy Trail.',
 ]

@@ -85,7 +85,7 @@ export default function Plain() {
                 }
                 right={<b className="cv-tech">{p.tech.join(' | ')}</b>}
               />
-              <Bullets items={p.description} />
+              <Bullets items={p.cv ?? p.description} />
             </article>
           ))}
         </Section>
